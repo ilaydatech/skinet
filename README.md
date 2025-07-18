@@ -64,6 +64,12 @@ Marka ve tip bilgilerini listeleme.
 
 Daha düzenli ve ölçeklenebilir veri erişim katmanı.
 
+4. Kısım Tamamladım:
+Bu bölümde generic repository yapısı kurularak controller içinde esnek kullanım sağlandı. Ardından specification pattern uygulanarak filtreleme, sıralama ve veri projeksiyonu gibi gelişmiş sorgu işlemleri tanımlandı. DTO kullanımıyla yalnızca ihtiyaç duyulan veriler döndürülerek veri şekillendirme yapıldı. Tüm adımlar debugger yardımıyla test edilip doğrulandı.
+
+<img width="1747" height="881" alt="image" src="https://github.com/user-attachments/assets/fcde3ebb-31d3-4ad3-ac3f-b755146b4bbe" />
+
+<img width="1764" height="891" alt="image" src="https://github.com/user-attachments/assets/6b8e2c5f-ffc8-4d34-a2a9-09b5e7c2781d" />
 
 📂 Çalıştırma
 
