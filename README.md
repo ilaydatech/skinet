@@ -1,6 +1,7 @@
 🛍️ SkiNet E-commerce App (.NET Core & Angular)
 
-Bu proje, Udemy'deki "Learn to build an e-commerce app with .NET Core and Angular" kursunun uygulanmasıdır. 2. Kısmı Tamamladım.
+Bu proje, Udemy'deki "Learn to build an e-commerce app with .NET Core and Angular" kursunun uygulanmasıdır. 
+2. Kısmı Tamamladım:
 
 🚀 Tamamlanan Bölüm
 
@@ -36,6 +37,32 @@ Docker SQL Server Container
 Postman API Test
 
 <img width="1752" height="828" alt="image" src="https://github.com/user-attachments/assets/76f8dbf7-7b4c-43fe-b85c-6e591e49e328" />
+
+3. Kısmı Tamamladım:
+   
+Repository pattern yapısı kuruldu ve uygulandı.
+
+Repository interface ve implementasyon class'ları oluşturuldu.
+
+Repository method'ları yazıldı.
+
+Controller'da repository kullanımı sağlandı.
+
+Veritabanı için örnek (seed) ürün verileri eklendi.
+
+Marka ve ürün tiplerini çekme endpoint'leri geliştirildi.
+
+Ürünler için markaya göre filtreleme özelliği eklendi.
+
+Ürünleri sıralama (sorting) özelliği eklendi.
+
+⚙️ Yeni Eklenen Özellikler
+
+Marka ve tip bilgilerini listeleme.
+
+Ürünlerde sıralama ve filtreleme desteği.
+
+Daha düzenli ve ölçeklenebilir veri erişim katmanı.
 
 
 📂 Çalıştırma
