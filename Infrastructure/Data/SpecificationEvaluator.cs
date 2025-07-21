@@ -9,11 +9,11 @@ public class SpecificationEvaluator<T> where T : BaseEntity
     {
         if (spec.Criteria != null)
         {
-            query = query.Where(spec.Criteria); //x => x.Brand == brand
+            query = query.Where(spec.Criteria); // Eğer filtre varsa uygula
         }
         if (spec.OrderBy != null)
         {
-            query = query.OrderBy(spec.OrderBy);
+            query = query.OrderBy(spec.OrderBy); // Artan sıralama uygula
         }
         if (spec.OrderByDescending != null)
         {
@@ -23,7 +23,13 @@ public class SpecificationEvaluator<T> where T : BaseEntity
         {
             query = query.Distinct();
         }
-        return query;
+        if (spec.IsPagingEnabled)
+        {
+            // Sayfalama aktifse: belirtilen kadar kaydı atla ve sonra al
+            query = query.Skip(spec.Skip).Take(spec.Take);
+        }
+        return query; // Sonuç olarak tüm filtre, sıralama ve sayfalama uygulanmış hale gelir
+        
     }
 
     public static IQueryable<TResult> GetQuery<TSpec, TResult>(IQueryable<T> query,
@@ -52,6 +58,11 @@ public class SpecificationEvaluator<T> where T : BaseEntity
         if (spec.IsDistinct)
         {
             selectQuery = selectQuery?.Distinct();
+        }
+
+        if (spec.IsPagingEnabled)
+        {
+            selectQuery = selectQuery?.Skip(spec.Skip).Take(spec.Take);
         }
         return selectQuery ?? query.Cast<TResult>();
     }

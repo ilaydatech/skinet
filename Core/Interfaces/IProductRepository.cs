@@ -7,6 +7,8 @@ public interface IProductRepository
 {
     // Fonksiyon imzaları (planlar)
     //product → fonksiyonun içine giren o anki veri (örnek ürün).
+    //Bu interface, ürünlerle ilgili tüm temel işlemlerin planlarını içerir.
+
     Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type, string? sort);
     Task<Product?> GetProductByIdAsync(int id);
     Task<IReadOnlyList<string>> GetBrandsAsync();

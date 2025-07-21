@@ -13,7 +13,23 @@ public class BaseSpecification<T>(Expression<Func<T, bool>>? criteria) : ISpecif
 
       public bool IsDistinct { get; private set; }
 
-      protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
+      public int Take { get; private set; } // Kaç adet veri alınacak
+
+      public int Skip { get; private set; } // Kaç kayıt atlanacak (örnek: önceki sayfadakiler)
+
+      public bool IsPagingEnabled { get; private set; } // Sayfalama açık mı?
+
+      public IQueryable<T> ApplyCriteria(IQueryable<T> query)
+      {
+            //Markası Apple olan ürünleri istiyorum
+            if (Criteria != null)
+            {
+                  query = query.Where(Criteria);
+            }
+            return query;
+      }
+
+    protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
       {
             OrderBy = orderByExpression;
       }
@@ -25,6 +41,12 @@ public class BaseSpecification<T>(Expression<Func<T, bool>>? criteria) : ISpecif
       protected void ApplyDistinct()
       {
             IsDistinct = true;
+      }
+      protected void ApplyPaging(int skip, int take)
+      {
+            Skip = skip; //class seviyesinde tanımlı özelliğe (property) dışarıdan gelen parametreler atanıyor.
+            Take = take;
+            IsPagingEnabled = true;
       }
 }
 
