@@ -70,6 +70,39 @@ Bu bölümde generic repository yapısı kurularak controller içinde esnek kull
 <img width="1747" height="881" alt="image" src="https://github.com/user-attachments/assets/fcde3ebb-31d3-4ad3-ac3f-b755146b4bbe" />
 
 <img width="1764" height="891" alt="image" src="https://github.com/user-attachments/assets/6b8e2c5f-ffc8-4d34-a2a9-09b5e7c2781d" />
+5 Kısım Tamamladım: Sorting, Filtering, Searching & Pagination
+Bu bölümde ürün listeleme API’sine gelişmiş filtreleme ve sayfalama özellikleri eklendi:
+
+ProductSpecParams sınıfı oluşturularak URL üzerinden filtre, sıralama, sayfa boyutu ve arama gibi parametreler alındı.
+
+ProductSpecification sınıfında:
+
+Marka ve tür filtreleme özellikleri eklendi.
+
+Sort parametresi ile fiyat veya isim bazlı sıralama sağlandı.
+
+ApplyPaging yöntemi ile dinamik sayfalama uygulandı.
+
+Pagination<T> sınıfı ile toplam veri sayısı, sayfa bilgileri ve veri listesi taşındı.
+
+BaseApiController sınıfına CreatePagedResult isimli yardımcı bir method eklendi.
+
+ProductsController, BaseApiController'dan türetilerek ortak sayfalama kodları merkezi hale getirildi.
+
+Son olarak Search parametresi eklenerek ürün adına göre arama yapılması sağlandı (Name.Contains(search)).
+
+📁 İlgili dosyalar:
+
+ProductSpecParams.cs
+
+ProductSpecification.cs
+
+Pagination.cs
+
+BaseApiController.cs
+
+ProductsController.cs
+
 
 📂 Çalıştırma
 
