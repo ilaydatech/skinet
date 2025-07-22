@@ -1,6 +1,7 @@
 🛍️ SkiNet E-commerce App (.NET Core & Angular)
 
 Bu proje, Udemy'deki "Learn to build an e-commerce app with .NET Core and Angular" kursunun uygulanmasıdır. 
+
 2. Kısmı Tamamladım:
 
 🚀 Tamamlanan Bölüm
