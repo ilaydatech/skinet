@@ -1,6 +1,7 @@
 🛍️ SkiNet E-commerce App (.NET Core & Angular)
 
 Bu proje, Udemy'deki "Learn to build an e-commerce app with .NET Core and Angular" kursunun uygulanmasıdır. 
+
 2. Kısmı Tamamladım:
 
 🚀 Tamamlanan Bölüm
@@ -70,7 +71,7 @@ Bu bölümde generic repository yapısı kurularak controller içinde esnek kull
 <img width="1747" height="881" alt="image" src="https://github.com/user-attachments/assets/fcde3ebb-31d3-4ad3-ac3f-b755146b4bbe" />
 
 <img width="1764" height="891" alt="image" src="https://github.com/user-attachments/assets/6b8e2c5f-ffc8-4d34-a2a9-09b5e7c2781d" />
-5 Kısım Tamamladım: Sorting, Filtering, Searching & Pagination
+5. Kısım Tamamladım: Sorting, Filtering, Searching & Pagination
 Bu bölümde ürün listeleme API’sine gelişmiş filtreleme ve sayfalama özellikleri eklendi:
 
 ProductSpecParams sınıfı oluşturularak URL üzerinden filtre, sıralama, sayfa boyutu ve arama gibi parametreler alındı.
@@ -102,6 +103,55 @@ Pagination.cs
 BaseApiController.cs
 
 ProductsController.cs
+
+6.Kısmı Tamamladım: Erros Handling on the API
+Bu bölümde, API'mize özel hata yönetimi (custom error handling) ve CORS (Cross-Origin Resource Sharing) desteği eklendi. Amaç, API'nin hem daha güvenli hem de kullanıcı dostu hale gelmesini sağlamak.
+
+✅ Yapılanlar
+📍 BuggyController ile Hata Senaryoları Testi
+BuggyController.cs dosyası eklendi.
+
+Bu controller aracılığıyla farklı HTTP hata türlerini simüle eden endpoint'ler oluşturuldu:
+
+401 Unauthorized
+
+400 Bad Request
+
+404 Not Found
+
+500 Internal Server Error
+
+400 Validation Error (Model doğrulama)
+
+📍 CreateProductDto ile Model Doğrulama (Validation)
+CreateProductDto.cs sınıfı oluşturularak frontend'den gelen ürün verileri için doğrulama kuralları tanımlandı.
+
+[Required], [Range] gibi veri anotasyonları kullanıldı.
+
+Validation hataları, otomatik olarak 400 yanıtı döndürür.
+
+📍 ApiErrorResponse ile Standart Hata Yapısı
+ApiErrorResponse.cs sınıfı tanımlanarak hata durumlarında dönecek JSON yapısı belirlendi.
+
+Geliştirici ortamında detaylı (stack trace dahil), üretim ortamında sade hata mesajı döner.
+
+📍 ExceptionMiddleware ile Global Hata Yönetimi
+Tüm uygulamayı kapsayan özel bir middleware (ExceptionMiddleware.cs) tanımlandı.
+
+try-catch blokları yerine tüm hataları burada yakalayıp yapılandırılmış JSON olarak kullanıcıya iletir.
+
+📍 CORS Yapılandırması
+Program.cs dosyasında:
+
+AddCors() metodu ile servis olarak eklendi.
+
+UseCors() ile http://localhost:4200 ve https://localhost:4200 domainlerinden gelen isteklere izin verildi.
+
+Bu sayede frontend (Angular) uygulamaları bu API’ye sorunsuz şekilde bağlanabilir.
+
+📍 Middleware Entegrasyonu
+UseMiddleware<ExceptionMiddleware>() komutu ile özel hata yönetimi uygulama pipeline’ına dahil edildi.
+
 
 
 📂 Çalıştırma
