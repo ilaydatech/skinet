@@ -44,6 +44,9 @@ export class ShopService {
     //Kullanıcı hangi markaları/tipleri seçtiyse, sadece onlara ait ürünler çekilmiş olur.
     return this.http.get<Pagination<Product>>(this.baseUrl + 'products', {params})
   }
+  getProduct(id: number) {
+    return this.http.get<Product>(this.baseUrl + 'products/' + id);
+  }
   
   getBrands() {
     if (this.brands.length > 0) return;
