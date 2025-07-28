@@ -169,6 +169,29 @@ Bu süreçte Observable mantığı detaylı biçimde öğrenilmiş; veri akışl
 
 Bölümde ayrıca TypeScript dilinin güçlü tip sistemi kullanılarak `type Todo`, `type Pagination<T>` gibi özel ve generic veri modelleri tanımlanmıştır. Bu sayede hem yeniden kullanılabilir hem de güçlü şekilde tip denetimi yapan veri yapıları oluşturulmuştur. API'den dönen verilerin tip güvenliği sağlanarak daha sağlam ve hatasız bir Angular uygulamasının temeli atılmıştır.
 
+9. Kısmı Tamamladım:  Ürün Filtreleme, Sıralama, Sayfalama ve Arama Özellikleri
+Bu bölümde kullanıcıların ürünleri daha rahat bulabilmesi için filtreleme, sıralama, sayfalama ve arama özellikleri eklendi.
+<img width="1902" height="913" alt="image" src="https://github.com/user-attachments/assets/7e7bdaaa-c08e-476b-8cec-1b95bbc31805" />
+
+📍 Filtreleme
+ Marka ve Tür Seçimi: Kullanıcılar Filters butonu ile açılan pencereden marka (Brand) ve ürün tipi (Type) seçebilir.
+<img width="1897" height="900" alt="image" src="https://github.com/user-attachments/assets/fb865504-e902-423a-8cb6-77acd9982573" />
+
+Dinamik Listeleme: Seçilen filtrelere göre ürün listesi anında güncellenir.
+
+📍 Sıralama
+Kriter Seçimi: Sort menüsü üzerinden ürünler fiyat, alfabe vb. kriterlere göre sıralanabilir.
+<img width="1898" height="906" alt="image" src="https://github.com/user-attachments/assets/ae6e6be1-4bd0-4e3b-99de-7110c92c4025" />
+
+📍 Sayfalama (Pagination)
+Sayfa Boyutu: Items per page seçeneği ile sayfa başına ürün sayısı ayarlanabilir.
+
+📍 Sayfa Geçişi: İleri/geri butonları ile sayfalar arasında geçiş yapılabilir.
+
+📍 Arama (Search)
+📍 Arama Kutusu: Kullanıcı, arama kutusuna yazdığı kelimeye göre ürünleri filtreleyebilir.
+
+💡 Sonuç: Bu adım ile kullanıcı deneyimi artırılmış, ürünlere erişim kolaylaştırılmış ve aradıkları ürünlere hızlıca ulaşmaları sağlanmıştır. 🚀
 
 📂 Çalıştırma
 
