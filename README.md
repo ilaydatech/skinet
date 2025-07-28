@@ -104,7 +104,7 @@ BaseApiController.cs
 
 ProductsController.cs
 
-6.Kısmı Tamamladım: Erros Handling on the API
+6. Kısmı Tamamladım: Erros Handling on the API
 Bu bölümde, API'mize özel hata yönetimi (custom error handling) ve CORS (Cross-Origin Resource Sharing) desteği eklendi. Amaç, API'nin hem daha güvenli hem de kullanıcı dostu hale gelmesini sağlamak.
 
 ✅ Yapılanlar
@@ -152,6 +152,22 @@ Bu sayede frontend (Angular) uygulamaları bu API’ye sorunsuz şekilde bağlan
 📍 Middleware Entegrasyonu
 UseMiddleware<ExceptionMiddleware>() komutu ile özel hata yönetimi uygulama pipeline’ına dahil edildi.
 
+7. Kısımı Tamamladım:
+Angular, Angular Material ve Tailwind kurulumu yapıldı.
+
+8. Kısmı Tamamladım:
+   
+   <img width="1904" height="898" alt="image" src="https://github.com/user-attachments/assets/a93a639b-f38e-4a94-8493-c181b529026c" />
+
+HttpClient ile API Entegrasyonu, Observable Yönetimi ve TypeScript Tip Modelleme
+
+Bu bölümde Angular uygulaması ile .NET Core API arasında başarılı bir veri iletişimi kurulmuştur. Angular'ın `HttpClientModule` modülü projeye dahil edilmiş, `ShopComponent` içerisinde `HttpClient` servisi kullanılarak `GET` isteği ile ürün verileri backend’den alınmıştır.
+
+Backend tarafında `https://localhost:5001/api/products` endpoint’ine yapılan bu istek, Angular içerisinde `this.http.get<Pagination<Product>>(...)` şeklinde yapılandırılmış ve dönen veri `Observable` yapısı ile karşılanmıştır. `subscribe()` fonksiyonu aracılığıyla veri akışı dinlenmiş, başarılı yanıt geldiğinde `products` değişkenine atanarak şablon tarafında görüntülenmesi sağlanmıştır.
+
+Bu süreçte Observable mantığı detaylı biçimde öğrenilmiş; veri akışlarının nasıl çalıştığı, ne zaman tetiklendikleri ve `subscribe()` ile nasıl veri alınabildiği incelenmiştir. Ayrıca RxJS kütüphanesinin temel özellikleri (stream yapısı, iptal edilebilirlik, pipe operatörleri gibi) örneklerle anlaşılmıştır.
+
+Bölümde ayrıca TypeScript dilinin güçlü tip sistemi kullanılarak `type Todo`, `type Pagination<T>` gibi özel ve generic veri modelleri tanımlanmıştır. Bu sayede hem yeniden kullanılabilir hem de güçlü şekilde tip denetimi yapan veri yapıları oluşturulmuştur. API'den dönen verilerin tip güvenliği sağlanarak daha sağlam ve hatasız bir Angular uygulamasının temeli atılmıştır.
 
 
 📂 Çalıştırma
