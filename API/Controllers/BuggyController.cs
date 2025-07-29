@@ -1,5 +1,4 @@
 ﻿using API.DTOs;
-using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -15,7 +14,7 @@ public class BuggyController : BaseApiController
     [HttpGet("badrequest")]
     public IActionResult GetBadRequest()
     {
-        return BadRequest("Not a good request");
+        return BadRequest("This is not a good request");
     }
 
     [HttpGet("notfound")]
@@ -29,7 +28,7 @@ public class BuggyController : BaseApiController
     {
         throw new Exception("This is a test exception");
     }
-
+    
     [HttpPost("validationerror")]
     public IActionResult GetValidationError(CreateProductDto product)
     {
