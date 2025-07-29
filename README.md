@@ -175,13 +175,17 @@ Bu bölümde kullanıcıların ürünleri daha rahat bulabilmesi için filtrelem
 
 📍 Filtreleme
  Marka ve Tür Seçimi: Kullanıcılar Filters butonu ile açılan pencereden marka (Brand) ve ürün tipi (Type) seçebilir.
+ 
 <img width="1897" height="900" alt="image" src="https://github.com/user-attachments/assets/fb865504-e902-423a-8cb6-77acd9982573" />
+
 
 Dinamik Listeleme: Seçilen filtrelere göre ürün listesi anında güncellenir.
 
 📍 Sıralama
 Kriter Seçimi: Sort menüsü üzerinden ürünler fiyat, alfabe vb. kriterlere göre sıralanabilir.
+
 <img width="1898" height="906" alt="image" src="https://github.com/user-attachments/assets/ae6e6be1-4bd0-4e3b-99de-7110c92c4025" />
+
 
 📍 Sayfalama (Pagination)
 Sayfa Boyutu: Items per page seçeneği ile sayfa başına ürün sayısı ayarlanabilir.
@@ -193,6 +197,27 @@ Sayfa Boyutu: Items per page seçeneği ile sayfa başına ürün sayısı ayarl
 
 💡 Sonuç: Bu adım ile kullanıcı deneyimi artırılmış, ürünlere erişim kolaylaştırılmış ve aradıkları ürünlere hızlıca ulaşmaları sağlanmıştır. 🚀
 
+10. Kısmı Tamamladım: Angular Routing ve Ürün Detay Sayfası
+Bu bölümde ürün detay sayfası oluşturuldu ve Angular Routing ile ürünlere özel sayfalar tasarlandı.
+
+<img width="1915" height="908" alt="image" src="https://github.com/user-attachments/assets/00df99c9-f18d-4a66-9e2c-e762d44a6dda" />
+
+🚏 Routing Ayarları
+ Angular Routing kullanılarak /shop/:id route'u eklendi
+
+🖱️ Ürün kartlarına tıklanınca ilgili ürünün detay sayfasına yönlendirme yapıldı
+
+🛠️ ProductDetailsComponent
+ ActivatedRoute ile URL'den ürün id parametresi alındı
+
+ShopService üzerinden getProduct() ile API’den ürün bilgisi çekildi
+
+🖼️ Detay sayfasında ürün adı, fiyatı, resmi ve açıklaması gösterildi
+
+ UI Tasarımı
+Angular Material ile kart yapısı kullanıldı
+
+CSS ile hover ve geçiş efektleri iyileştirildi
 📂 Çalıştırma
 
 ```bash
