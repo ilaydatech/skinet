@@ -214,10 +214,58 @@ ShopService üzerinden getProduct() ile API’den ürün bilgisi çekildi
 
 🖼️ Detay sayfasında ürün adı, fiyatı, resmi ve açıklaması gösterildi
 
- UI Tasarımı
-Angular Material ile kart yapısı kullanıldı
+11. Kısmı Tamamladım: Hata Yönetimi ve Loading Sistemi
+- 400, 401, 404 ve 500 HTTP hatalarını yakalamak için errorInterceptor eklendi
+- SnackbarService ile başarı/hata bildirimleri gösterimi sağlandı
+- 404 hataları için NotFoundComponent oluşturuldu (Mağazaya dön butonu ile)
+- 500 hataları için ServerErrorComponent oluşturuldu, backend hata detayları gösteriliyor
+- API istekleri sırasında yüklenme durumunu göstermek için loadingInterceptor eklendi
+- BusyService ile aktif API istekleri takip edilerek yüklenme durumu yönetildi
+- API hatalarını test etmek için TestErrorComponent eklendi
+- app.config içinde interceptors ve hata bileşenleri tanımlandı
 
-CSS ile hover ve geçiş efektleri iyileştirildi
+<img width="1912" height="905" alt="image" src="https://github.com/user-attachments/assets/435d7982-5621-4d9c-a021-24581c9c307a" />
+
+
+🔹 Nasıl Çalışır
+API isteği başlar
+→ loadingInterceptor → busyService.busy() çağrılır → Loading spinner açılır
+
+API cevabı gelir (başarılı ya da hatalı)
+→ loadingInterceptor → busyService.idle() çağrılır → Loading spinner kapanır
+
+Hata oluşursa
+
+errorInterceptor HTTP hata koduna göre işlem yapar:
+
+400 → Validation hataları veya genel hata Snackbar ile gösterilir
+
+401 → Yetkisiz erişim mesajı Snackbar ile gösterilir
+
+404 → /not-found sayfasına yönlendirilir
+
+500 → /server-error sayfasına yönlendirilir, hata detayları aktarılır
+
+Hata sayfaları
+
+NotFoundComponent → 404 hataları için
+
+ServerErrorComponent → 500 hataları için (detaylar gösterilir)
+
+🔹 Test Etme
+TestErrorComponent üzerinden farklı hatalar test edilebilir:
+
+500 error → /buggy/internalerror
+
+404 error → /buggy/notfound
+
+400 error → /buggy/badrequest
+
+401 error → /buggy/unauthorized
+
+400 validation error → /buggy/validationerror
+
+
 📂 Çalıştırma
 
 ```bash
