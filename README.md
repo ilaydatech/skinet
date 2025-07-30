@@ -265,6 +265,50 @@ TestErrorComponent üzerinden farklı hatalar test edilebilir:
 
 400 validation error → /buggy/validationerror
 
+12. Kısmı Tamamladım: Redis Entegrasyonu ile Sepet (Shopping Cart) Yönetimi
+Bu güncelleme ile uygulamaya **Redis** entegrasyonu eklenmiştir.  
+Sepet verileri Redis üzerinde tutulmakta, böylece **hızlı erişim** sağlanmakta ve **veritabanı yükü azaltılmaktadır.
+# 🛒 Redis Entegrasyonu ile Sepet (Shopping Cart) Yönetimi
+
+📌 Genel Bakış
+Bu güncelleme ile uygulamaya **Redis** entegrasyonu eklendi.  
+Sepet verileri Redis üzerinde tutuluyor, böylece hızlı erişim sağlanıyor ve veritabanı yükü azalıyor.
+
+<img width="1833" height="605" alt="image" src="https://github.com/user-attachments/assets/e55fcbc8-c953-4103-b24a-d7e28251affd" />
+
+
+📌 Eklenen Özellikler
+
+1️⃣ Redis Servisi
+- docker-compose.yml dosyasına **Redis** servisi eklendi
+
+2️⃣ .NET Redis Entegrasyonu
+- StackExchange.Redis NuGet paketi projeye eklendi
+- IConnectionMultiplexer Program.cs üzerinden konfigüre edildi
+
+3️⃣ Sepet (Cart) İşlemleri
+- ShoppingCart ve CartItem entity’leri oluşturuldu
+- CartService içerisinde:
+  - SetCartAsync() → Redis üzerinde ekleme/güncelleme
+  - GetCartAsync() → Redis üzerinden okuma
+  - DeleteCartAsync() → Redis’ten silme
+- CartController endpointleri:
+  - GET /api/cart?id={cartId}
+  - POST /api/cart
+  - DELETE /api/cart?id={cartId}
+
+ 4️⃣ Test
+- Postman ile tüm endpointler test edildi
+
+<img width="1376" height="898" alt="image" src="https://github.com/user-attachments/assets/5188db26-5e3e-4984-9458-c5a37ef4a3f4" />
+
+
+⚙️ Çalıştırma Adımları
+1. Docker Compose ile Redis’i başlat**
+   powershell
+   docker compose up -d
+
+---
 
 📂 Çalıştırma
 
