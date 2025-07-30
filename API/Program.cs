@@ -2,6 +2,9 @@ using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using API.Middleware;
+using StackExchange.Redis;
+using Infrastructure;
+using Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,16 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 // CORS desteğini aktive et
 builder.Services.AddCors();
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(config =>
+{
+    var connString = builder.Configuration.GetConnectionString("Redis")
+        ?? throw new Exception("Cannot get redis connection string");
+    var configuration = ConfigurationOptions.Parse(connString, true);
+    return ConnectionMultiplexer.Connect(configuration);
+});
+//Bu kod, appsettings.json’daki Redis adresini alıp tek bir bağlantı (Singleton) oluşturur ve API’nin her yerinden Redis’e erişmesini sağlar.
+builder.Services.AddSingleton<ICartService, CartService>();
 
 var app = builder.Build();
 

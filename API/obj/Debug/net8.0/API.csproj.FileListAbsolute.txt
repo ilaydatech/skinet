@@ -134,3 +134,5 @@ C:\Users\ilayd\skinet\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtim
 C:\Users\ilayd\skinet\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ilayd\skinet\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\ilayd\skinet\API\obj\Debug\net8.0\API.sourcelink.json
+C:\Users\ilayd\skinet\API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\ilayd\skinet\API\bin\Debug\net8.0\StackExchange.Redis.dll

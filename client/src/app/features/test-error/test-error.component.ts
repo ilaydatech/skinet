@@ -11,6 +11,13 @@ import { MatButton } from '@angular/material/button';
   templateUrl: './test-error.component.html',
   styleUrl: './test-error.component.scss'
 })
+
+//hata türlerini bilerek tetikleyip errorInterceptor ve
+// SnackbarService’in doğru çalışıp çalışmadığını test etmek için kullanılıyor.
+
+//Bu bileşen, farklı hata kodlarını tetiklemek için butonlar içerir.
+//Hatalar Interceptor’a gider.
+//Interceptor → Snackbar mesajı veya yönlendirme yapar.
 export class TestErrorComponent {
   private http = inject(HttpClient);
   baseUrl = 'https://localhost:5001/api/';
@@ -51,3 +58,7 @@ export class TestErrorComponent {
     });
   }
 }
+//API’ye bilerek yanlış istekler gönderir.
+
+//404, 400, 500, 401 gibi hataları tetikler.
+

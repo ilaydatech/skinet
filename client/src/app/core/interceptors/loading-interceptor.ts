@@ -14,3 +14,7 @@ export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
     finalize(() => busyService.idle())
   )
 };
+//API isteği devam ederken ekrana “yükleniyor” göstergesi için kullanılır--animasyon
+//İstek başlarken: busyService.busy() → Loading açılır.
+//İstek bittiğinde: busyService.idle() → Loading kapanır.
+
