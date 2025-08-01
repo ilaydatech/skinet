@@ -10,10 +10,10 @@ public class CartController(ICartService cartService) : BaseApiController
 {
     // Sepeti id'ye göre getir (Redis'ten)
     [HttpGet]
-    public async Task<ActionResult<ShoppingCart>> GetCartById(string id)
+    public async Task<ActionResult<ShoppingCart>> GetCartById(string id) //Dönene cevap ShppingCart olacak.
     {
         var cart = await cartService.GetCartAsync(id);
-
+        //GetCartAsync(id) → Servise “Bu ID’ye ait sepeti getir” diyoruz.
         return Ok(cart ?? new ShoppingCart { Id = id });
     }
     [HttpPost]

@@ -6,7 +6,6 @@ using StackExchange.Redis;
 namespace Infrastructure.Services;
 
 //Bu servis sadece sepete ait verileri Redis’te tutmak için var.
-
 //CartService sınıfı, IConnectionMultiplexer üzerinden Redis’e bağlanıyor.
 public class CartService(IConnectionMultiplexer redis) : ICartService
 {

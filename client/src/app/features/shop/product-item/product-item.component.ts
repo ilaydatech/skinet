@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { MatCard, MatCardActions, MatCardContent } from "@angular/material/card";
 
+import { CartService } from '../../../core/services/cart.service';
 import { CurrencyPipe } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
@@ -24,4 +25,6 @@ import { RouterLink } from '@angular/router';
 //@Input()	Bu property dışarıdan veri alabilir demektir.
 export class ProductItemComponent {
 @Input() product?: Product;
+cartService = inject(CartService);
+
 }
