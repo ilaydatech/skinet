@@ -302,6 +302,39 @@ Sepet verileri Redis üzerinde tutuluyor, böylece hızlı erişim sağlanıyor 
 
 <img width="1376" height="898" alt="image" src="https://github.com/user-attachments/assets/5188db26-5e3e-4984-9458-c5a37ef4a3f4" />
 
+13. Kısmı Tamamladım: Sepet işlevselliği ve ürün detay entegrasyonu 🛒
+
+🆕 Ürün ekleme/çıkarma işlevleri tamamlandı
+💾 Sepet verisi backend API üzerinden persist edilecek şekilde düzenlendi
+🔄 Navbar üzerinde gerçek zamanlı sepet ürün adedi güncellemesi eklendi
+📄 Sepet sayfası oluşturuldu ve item bileşenleriyle dinamik listeleme sağlandı
+📊 Order Summary ve Order Totals bileşenleri geliştirildi
+🔧 Ürün detay sayfasından sepet güncelleme işlevi entegre edildi
+
+## 🛒 Sepet Modülü
+
+Sepet modülü projenin tamamında aktif hale getirildi:
+
+<img width="1916" height="900" alt="image" src="https://github.com/user-attachments/assets/2d050f6f-6f7d-4bdd-ad13-f61715a815a0" />
+
+
+- 🆕 Ürün Ekleme
+   ProductItemComponent üzerinden CartService ile tetiklenir
+- 💾 Veri Kalıcılığı
+   Sepet verisi CartService içindeki signal ile yönetilir, backend API’ye kaydedilir
+- 🔄 Gerçek Zamanlı Güncelleme
+   Navbar üzerindeki itemCount computed değeri signal değiştikçe otomatik yenilenir
+- 📄 Sepet Sayfası
+   CartComponent, CartItemComponent ile tüm ürünleri dinamik listeler
+- 📊 Sipariş Özeti
+   OrderSummaryComponent ve OrderTotalsComponent; ara toplam, indirim, kargo ve toplam hesaplamalarını yapar
+- ➕➖ Adet Güncelleme
+   Ürün miktarı arttırma/azaltma ve silme işlemleri CartService üzerinden API ile backend’e iletilir
+- 🔧 Ürün Detay Entegrasyonu
+   ProductDetailsComponent üzerinden Update Cart özelliği ile quantity doğrudan güncellenebilir
+
+<img width="1913" height="898" alt="image" src="https://github.com/user-attachments/assets/5619ad6d-144f-4904-8fbc-13c7e258c558" />
+
 
 ⚙️ Çalıştırma Adımları
 1. Docker Compose ile Redis’i başlat**
