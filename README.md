@@ -335,7 +335,51 @@ Sepet modülü projenin tamamında aktif hale getirildi:
 
 <img width="1913" height="898" alt="image" src="https://github.com/user-attachments/assets/5619ad6d-144f-4904-8fbc-13c7e258c558" />
 
+14. Kısmı Tamamladım: Identity & User Management
 
+Bu bölümde kullanıcı yönetimi ve kimlik doğrulama sistemi tamamlandı.
+
+Identity kurulumu
+
+AppUser modeli oluşturuldu (FirstName, LastName alanları eklendi).
+
+StoreContext IdentityDbContext<AppUser> olarak güncellendi.
+
+Identity endpoint’leri (/register, /login, /logout) aktif hale getirildi.
+
+Custom Register Endpoint
+
+AccountController içinde kullanıcı kaydı için özel endpoint eklendi.
+
+Postman üzerinden JSON body ile kayıt işlemleri test edildi.
+
+Authentication Testing
+
+Cookie tabanlı login/logout işlemleri test edildi.
+
+[Authorize] attribute ile korumalı endpointler kontrol edildi.
+
+Additional User Endpoints
+
+GetUserInfo → Giriş yapmış kullanıcının bilgilerini döner.
+
+GetAuthState → Kullanıcının oturum durumunu kontrol eder.
+
+Extension Methods
+
+ClaimsPrincipalExtensions ile giriş yapmış kullanıcıyı email üzerinden bulma kolaylaştırıldı.
+
+AddressMappingExtensions ile AddressDto ↔ Address dönüşümleri eklendi.
+
+Validation
+
+DTO seviyesinde validation hataları test edildi.
+
+User Address Management
+
+Address entity ve AddressDto eklendi.
+
+CreateOrUpdateAddress endpoint’i ile kullanıcı adres ekleme/güncelleme işlemleri tamamlandı.
 ⚙️ Çalıştırma Adımları
 1. Docker Compose ile Redis’i başlat**
    powershell
