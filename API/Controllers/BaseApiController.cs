@@ -23,25 +23,3 @@ public class BaseApiController : ControllerBase
         return Ok(pagination);
     }
 }
-// using System;
-// using Core.Entities;
-// using Core.Interfaces;
-// using Microsoft.AspNetCore.Mvc;
-// using Microsoft.CodeAnalysis;
-
-// namespace API.Controllers;
-
-// [ApiController]
-// [Route("api/[controller]")]
-// public class BaseApiController : ControllerBase
-// {
-//     protected async Task Task<IActionResult> CreatePagedResult<T>(IGenericRepository<T> repo,
-//     ISpecification<T> spec, int pageIndex, intpageSize) where T : BaseEntity
-//     {
-//         var items = await repo.ListAsync(spec);
-//         var count = await repo.CountAsync(spec);
-
-//         var pagination = new Pagination<T>(specParams.PageIndex,
-//         specParams.PageSize, count, products);
-//    }
-// }
