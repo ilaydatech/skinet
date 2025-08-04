@@ -67,7 +67,7 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
             IsAuthenticated = User.Identity?.IsAuthenticated ?? false
         });
     }
-    
+
     [Authorize]
     [HttpPost("address")]
     public async Task<ActionResult<Address>> CreateOrUpdateAddress(AddressDto addressDto)
@@ -81,11 +81,11 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
             user.Address = addressDto.ToEntity();
         }
         else
-        {   
+        {
             //Adresi varsa güncelle
             user.Address.UpdateFromDto(addressDto);
         }
-             //Kullanıcı bilgilerini DB’ye kaydet
+        //Kullanıcı bilgilerini DB’ye kaydet
         var result = await signInManager.UserManager.UpdateAsync(user);
 
         if (!result.Succeeded) return BadRequest("Problem updating user address");

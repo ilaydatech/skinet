@@ -3,6 +3,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { InitService } from './core/services/init.service';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { authInterceptor } from './core/interceptors/auth-interceptor';
 import { errorInterceptor } from './core/interceptors/error-interceptor';
 import { lastValueFrom } from 'rxjs';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
@@ -15,7 +16,10 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([errorInterceptor, loadingInterceptor])),
+    provideHttpClient(withInterceptors([errorInterceptor,
+       loadingInterceptor,
+       authInterceptor
+      ])),
     
     provideAppInitializer(async () => {
       const initService = inject(InitService);
