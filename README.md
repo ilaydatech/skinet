@@ -380,6 +380,39 @@ User Address Management
 Address entity ve AddressDto eklendi.
 
 CreateOrUpdateAddress endpoint’i ile kullanıcı adres ekleme/güncelleme işlemleri tamamlandı.
+
+15. Kısmı Tamamladım: Kimlik Doğrulama, Validasyon ve Guard Yapısı
+
+<img width="1899" height="907" alt="image" src="https://github.com/user-attachments/assets/f185e426-f93b-46a9-9a91-c0c6426d4a9b" />
+
+<img width="1918" height="905" alt="image" src="https://github.com/user-attachments/assets/0ad4d503-10ed-4651-8f3a-f4be6a9e8aa2" />
+
+<img width="1913" height="903" alt="image" src="https://github.com/user-attachments/assets/5c662279-993a-4b34-9fcc-251e46ff8dd0" />
+
+
+- Auth Interceptor oluşturularak tüm HTTP isteklerine withCredentials desteği eklendi
+- Angular Material Menu entegre edilerek kullanıcı menüsü oluşturuldu
+- Register formu eklendi ve login formu ile form validasyon kuralları (zorunlu alan, e-posta formatı vb.) tamamlandı
+- Reusable TextInput bileşeni geliştirildi (hata mesajları dinamik)
+- Auth Guard eklendi ve Observable tabanlı kontrol ile güncellendi
+- Empty Cart Guard oluşturularak boş sepet yönlendirmesi eklendi
+- Empty State Component eklendi (boş veri durumları için kullanıcıya bilgi gösterimi)
+
+Auth Interceptor: Tüm HTTP isteklerine withCredentials eklenerek cookie tabanlı login güvenliği sağlandı.
+
+Angular Material Menü: Header üzerinde login olmuş kullanıcıya özel açılır menü eklendi.
+
+Login & Register Formları: Reactive Forms kullanılarak form validasyonu tamamlandı (Validators.required, Validators.email vb.).
+
+Reusable TextInput Component: Tekrarlı form alanları yerine yeniden kullanılabilir input bileşeni geliştirildi.
+
+Auth Guard: Login gerektiren sayfalar için guard eklendi; Observable tabanlı versiyona güncellendi.
+
+Empty Cart Guard: Sepet boşsa checkout sayfasına erişim engellenip kullanıcı bilgilendirildi.
+
+Empty State Component: Boş veri durumlarında kullanıcıya uygun mesaj gösteren komponent eklendi.
+
+
 ⚙️ Çalıştırma Adımları
 1. Docker Compose ile Redis’i başlat**
    powershell
