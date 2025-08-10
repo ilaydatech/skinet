@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+#enviroment 
+client/src/environments/environment.ts
+client/src/environments/environment.development.ts
+API/bin/
+API/obj/
+bin/
+obj/
