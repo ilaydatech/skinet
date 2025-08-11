@@ -385,9 +385,13 @@ Doğrulama ve hata yönetimi
 tamamlandı. 
 
 Gitgubta commit edebilmek için appsetting.json dosyamın içindeki Stripe Uygulamasından aldığım PublihableKey ve Secret Key bilgisini boş bırakmak durumunda kaldım, çalıştırmak için aşağıdaki gibi doldurunuz.
+
   "StripeSettings": {
+
     "PublishableKey": "pk_test_51RurANCz59hqGFPni3Jc4L8uMnVjIXllFznOrWMQIkK0tIFP7hyVipXiOkbCISRYXcPOimusQdafboKZLTYVr6Ti00hFJ99Ohz", 
+
     "S***etKey": "sk_test_51RurANCz59hqGFPnaEkmDORwO5FDbONVoMIAr5G1nkZRY5dl9dAknu8fgo25m6ZVpTgtzhCeyZIghiZ5qgjmQTR400scIDMjRY"
+
   }
 
 ⚙️ Çalıştırma Adımları
