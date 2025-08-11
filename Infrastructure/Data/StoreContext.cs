@@ -15,8 +15,8 @@ public class StoreContext(DbContextOptions options) : IdentityDbContext<AppUser>
     //IdentityDbContext<AppUser> sayesinde firstname lastname gibi alanlar apsNetUsers tablosuna eklenir.
     //Bir Products tablosu oluştur. Her satırı Product sınıfının bir örneği olacak
     public DbSet<Product> Products { get; set; }
-
     public DbSet<Address> Addresses { get; set; }
+    public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

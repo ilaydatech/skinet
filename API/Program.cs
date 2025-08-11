@@ -19,6 +19,7 @@ builder.Services.AddDbContext<StoreContext>(opt =>  // Veritabanı bağlantısı
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 // CORS desteğini aktive et
 builder.Services.AddCors();
 
@@ -55,6 +56,7 @@ try
     using var scope = app.Services.CreateScope();
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<StoreContext>();
+
     await context.Database.MigrateAsync();
     await StoreContextSeed.SeedAsync(context);
 }

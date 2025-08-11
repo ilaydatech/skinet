@@ -18,7 +18,6 @@ import { first } from 'rxjs';
     ReactiveFormsModule,
     MatCard,
     MatButton,
-    JsonPipe,
     TextInputComponent
   ],
   templateUrl: './register.component.html',
