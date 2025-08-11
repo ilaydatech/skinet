@@ -337,6 +337,13 @@ Amaç, kullanıcıdan teslimat adresini ve kargo yöntemini alarak, Stripe ile g
 
 <img width="1891" height="868" alt="image" src="https://github.com/user-attachments/assets/f981e76a-dee1-472c-be30-519af9145b72" />
 
+<img width="1918" height="902" alt="image" src="https://github.com/user-attachments/assets/514e9a25-b37e-4f72-a007-d386e8fa3b2c" />
+
+<img width="1915" height="904" alt="image" src="https://github.com/user-attachments/assets/98c82fb8-ea43-4544-8975-6eee7aef12b6" />
+
+<img width="1913" height="905" alt="image" src="https://github.com/user-attachments/assets/e4a8485f-1269-45dd-89db-a3c06ac02bc2" />
+
+<img width="1915" height="902" alt="image" src="https://github.com/user-attachments/assets/83b1e83a-685b-47d0-8de9-f6f7bd033ad1" />
 
 🚀 Yapılanlar
 📦 1. Teslimat Yöntemleri (Delivery Methods)
@@ -376,6 +383,12 @@ Kullanıcı dostu checkout akışı
 Doğrulama ve hata yönetimi
 3D Secure uyumu
 tamamlandı. 
+
+Gitgubta commit edebilmek için appsetting.json dosyamın içindeki Stripe Uygulamasından aldığım PublihableKey ve Secret Key bilgisini boş bırakmak durumunda kaldım, çalıştırmak için aşağıdaki gibi doldurunuz.
+  "StripeSettings": {
+    "PublishableKey": "pk_test_51RurANCz59hqGFPni3Jc4L8uMnVjIXllFznOrWMQIkK0tIFP7hyVipXiOkbCISRYXcPOimusQdafboKZLTYVr6Ti00hFJ99Ohz", 
+    "S***etKey": "sk_test_51RurANCz59hqGFPnaEkmDORwO5FDbONVoMIAr5G1nkZRY5dl9dAknu8fgo25m6ZVpTgtzhCeyZIghiZ5qgjmQTR400scIDMjRY"
+  }
 
 ⚙️ Çalıştırma Adımları
 1. Docker Compose ile Redis’i başlat**
